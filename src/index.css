@@ -58,7 +58,6 @@ body .card .header {
 }
 table.employees-list {
   width: 1000px;
-  min-height: 500px;
   background-color: white;
   border-radius: 4px;
   margin: 0 auto;
