@@ -2,8 +2,11 @@ import { createContext } from "react";
 
 const EmployeesListContext  = createContext({
     employees: [],
-    setData: () => {
+    pushNewEmployeeData: () => {
 
+    },
+    updateList: () => {
+        
     }
 }); 
 

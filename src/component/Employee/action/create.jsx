@@ -9,7 +9,7 @@ import { EmployeesListContext } from '../../../contexts';
 
 const CreateProfile = () => {
     const navigate = useNavigate();
-    const { setData } = useContext(EmployeesListContext);
+    const { pushNewEmployeeData } = useContext(EmployeesListContext);
     let [userData, setUserData] = useState(defaultNewUserData);
 
     const setFormData = e => {
@@ -25,7 +25,7 @@ const CreateProfile = () => {
     const saveEmployeeData = () => {
         userData["id"]= nanoid();
         userData["show"]= true;
-        setData(userData);
+        pushNewEmployeeData(userData);
         setUserData(defaultNewUserData);
         navigate('/');
     }

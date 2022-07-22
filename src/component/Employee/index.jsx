@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import _ from 'lodash';
+import _, { update } from 'lodash';
 import {
     useParams
   } from "react-router-dom";
@@ -11,14 +11,14 @@ const Employee = () => {
     const params = useParams();
     const navigate = useNavigate();
     
-    const { setData, employees } = useContext(EmployeesListContext);
+    const { updateList, employees } = useContext(EmployeesListContext);
     const user =  _.find(employees, function(o) { return o.id === params.id; });
 
 
     const deleteProfile = () => {
         if (window.confirm('Are you sure you want to delete this profile')) {
-            //let newData = employees.concat();
-            //Idea here will be to set show key of the user to false
+            user.show = false;
+            updateList(employees);
             navigate('/');
         }
     }

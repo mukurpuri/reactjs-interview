@@ -20,13 +20,17 @@ function App() {
    
   let [employees, setEmployees] = useState(defaultEmployeeList);
 
-  const setData = data => {
+  const pushNewEmployeeData = data => {
     let employeeList = employees.concat();
     employeeList.push(data);
     setEmployees(employeeList);
   }
+
+  const updateList = data => {
+    setEmployees(data);
+  }
   return (
-    <EmployeesListContext.Provider value={{employees, setData}}>
+    <EmployeesListContext.Provider value={{employees, pushNewEmployeeData, updateList}}>
       <div className="container">
           <div className="col-md-12">
           <BrowserRouter>
