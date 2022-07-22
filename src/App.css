@@ -22,3 +22,18 @@
 .App-link {
   color: #61dafb;
 }
+.form-group p{
+  font-weight: bold;
+}
+.user-dp {
+  width: 100px;
+  height: 100px;
+  border-radius: 50% 50%;
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
+}
+.action button{
+  margin-right: 1rem;
+}

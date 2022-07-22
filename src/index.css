@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@500&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  
+  /* Using custom google font*/
+  font-family: 'Inter', sans-serif;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +14,63 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* CSS Update*/
+body {
+  background: #e1e1e1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+body .card {
+  width: 700px;
+  min-height: 500px;
+  background-color: white;
+  border-radius:4px;
+  margin: 0 auto;
+  border-bottom: 4px solid #bfbfbf;
+  overflow: hidden;
+}
+body .card .header {
+  width: 100%;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  background: #f4f4f4;
+  padding: 1rem;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+}
+.addEmployee {
+  padding: 2rem;
+}
+.addEmployee .col {
+  margin-bottom: 2rem;
+}
+.addEmployee button{
+  margin-top: 2rem;
+}
+.full {
+  width: 100%;
+}
+table.employees-list {
+  width: 1000px;
+  min-height: 500px;
+  background-color: white;
+  border-radius: 4px;
+  margin: 0 auto;
+  border-bottom: 4px solid #bfbfbf;
+  overflow: hidden;
+}
+table.employees-list td {
+  height: 70px;
+  padding: 1rem 0.5rem;
+}
+.emp-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50% 50%;
 }

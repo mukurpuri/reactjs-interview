@@ -1,30 +1,45 @@
 import React from 'react';
+import { useState } from "react";
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Home from './component/Home';
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+  } from "react-router-dom";
 
 
-function App() {   
+import CreateProfile from './component/Employee/action/create';
+import EmployeeList from './component/Employee/list';
 
+import { defaultEmployeeList} from './utilities';
+
+import {EmployeesListContext} from './contexts';
+import Employee from './component/Employee';
+
+function App() {
+   
+  let [employees, setEmployees] = useState(defaultEmployeeList);
+
+  const setData = data => {
+    let employeeList = employees.concat();
+    employeeList.push(data);
+    setEmployees(employeeList);
+  }
   return (
+    <EmployeesListContext.Provider value={{employees, setData}}>
       <div className="container">
-          <Router>
-              <div className="col-md-12">
-                  <h1 className="text-center" style={style}></h1>
-                  <Switch>
-                      <Route path="/" exact component={Home} />
-                      <Route path="/home" component={Home} />
-                 
-                  </Switch>
-              </div>
-          </Router>
+          <div className="col-md-12">
+          <BrowserRouter>
+            <Routes>
+            <Route path="/" element={<EmployeeList />}></Route>
+            <Route path="/create" element={<CreateProfile />}></Route>
+            <Route path="/profile/:id" element={<Employee />}></Route>
+            </Routes>
+        </BrowserRouter>
+        </div>
       </div>
+      </EmployeesListContext.Provider>
   );
-}
-
-const style = {
-    color: 'red',
-    margin: '10px'
 }
 
 export default App;
