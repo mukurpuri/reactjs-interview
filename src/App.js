@@ -15,6 +15,7 @@ import { defaultEmployeeList} from './utilities';
 
 import {EmployeesListContext} from './contexts';
 import Employee from './component/Employee';
+import EditProfile from './component/Employee/action/edit';
 
 function App() {
    
@@ -38,6 +39,7 @@ function App() {
             <Route path="/" element={<EmployeeList />}></Route>
             <Route path="/create" element={<CreateProfile />}></Route>
             <Route path="/profile/:id" element={<Employee />}></Route>
+            <Route path="/edit/:id" element={<EditProfile />}></Route>
             </Routes>
         </BrowserRouter>
         </div>

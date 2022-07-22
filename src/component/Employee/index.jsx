@@ -71,7 +71,7 @@ const Employee = () => {
                 <div className="row">
                     <div className="form-group text-center action">
                         <button onClick={() => navigate("/")} type="button" className="btn btn-secondary"><strong>Back</strong></button>
-                        <button onClick={() => navigate("/")} type="button" className="btn btn-primary"><strong>Edit Profile</strong></button>
+                        <button onClick={() => navigate(`/edit/${user.id}`)} type="button" className="btn btn-primary"><strong>Edit Profile</strong></button>
                         <button onClick={deleteProfile} type="button" className="btn btn-danger"><strong>Delete</strong></button>
                     </div>
                 </div>
